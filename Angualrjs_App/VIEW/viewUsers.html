@@ -1,0 +1,132 @@
+<topheader></topheader>
+<navigation></navigation>
+
+<div class="container">
+       <h3 ng-if="editedUser">Update User Data</h3>
+       <form name="updateForm">
+     <table ng-if="editedUser" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{editedUser.id}}</td>
+        <td>
+            <input required name="name" ng-model="editedUser.name" type="text"  class="input-group form-control" placeholder="Name"/>
+                <span style="color:red" ng-show="updateForm.name.$dirty && updateForm.name.$invalid">
+                <span ng-show="updateForm.name.$error.required">Please Enter Name</span>
+                </span>
+         </td>
+         <td>
+            <input required name="email" ng-model="editedUser.email" type="text"  class="input-group form-control" placeholder="email"/>
+                <span style="color:red" ng-show="updateForm.email.$dirty && updateForm.email.$invalid">
+                    <span ng-show="updateForm.email.$error.required">Please Enter email</span>
+                </span>
+         </td>
+         <td>
+            <input required name="phone" ng-model="editedUser.phone" type="text"  class="input-group form-control" placeholder="phone"/>
+                <span style="color:red" ng-show="updateForm.phone.$dirty && updateForm.phone.$invalid">
+                    <span ng-show="updateForm.phone.$error.required">Please Enter phone Number</span>
+                </span>
+         </td>
+		 <td>
+            <input required name="gender" ng-model="editedUser.gender" type="text"  class="input-group form-control" placeholder="gender"/>
+                <span style="color:red" ng-show="updateForm.gender.$dirty && updateForm.gender.$invalid">
+                    <span ng-show="updateForm.gender.$error.required">Please Enter gender</span>
+                </span>
+         </td>
+         <td>
+            <input required name="age" ng-model="editedUser.age" type="text"  class="input-group form-control" placeholder="age"/>
+                <span style="color:red" ng-show="updateForm.age.$dirty && updateForm.age.$invalid">
+                    <span ng-show="updateForm.age.$error.required">Please Enter age</span>
+                </span>
+         </td>
+         
+         <td>
+            <input required name="address" ng-model="editedUser.address" type="text"  class="input-group form-control" placeholder="address"/>
+                <span style="color:red" ng-show="updateForm.address.$dirty && updateForm.address.$invalid">
+                    <span ng-show="updateForm.address.$error.required">Please Enter address</span>
+                </span>
+         </td>
+       
+        <td>
+            <button type="submit" ng-click="saveContact()" class="btn btn-success btn-xs col-md-5">S</button>
+            <button type="submit" ng-click="cancelUpdate()" class=" btn btn-warning btn-xs col-md-offset-1 col-md-5">X</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  </form>
+
+  <br/>
+  <div class="row createrow">
+  <div class="col-md-4">
+    <button type="submit" ng-click="createUserpage()" class="btn btn-success btn-sm"><i class="glyphicon glyphicon-plus-sign"></i>Create User</button>
+  </div>
+  <div class="col-md-4"></div>
+    <div class="col-md-4">
+     <div class="right-inner-addon ">
+      <i class="icon-search"></i>
+      <input type="search"
+           class="form-control pull-right" 
+           placeholder="Search" ng-model="search" />
+      </div>
+    </div>
+  </div>
+  <div class="tableContainer">
+  <table class="table table-striped table-bordered">
+    <thead class="loginHeader">
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>Address</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr dir-paginate="user in getList|orderBy:sortKey:reverse|filter:search|itemsPerPage:4">
+        <td>{{user.id}}</td>
+        <td>{{user.name}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.phone}}</td>
+        <td>{{user.gender}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.address}}</td>
+        <td>
+          <button type="submit" ng-click="viewUser(user.id , 'delete')" data-toggle="modal" data-target="#myModal" class="btn btn-danger btn-xs">D</button>
+          <button type="submit" ng-click="edit(user.id)" class=" btn btn-warning btn-xs">E</button>
+          <button type="submit" ng-click="viewUser(user.id , 'view')"  data-toggle="modal" data-target="#myModal" class=" btn btn-success btn-xs">V</button>
+         </td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+      
+      <tr>
+    </tfoot>
+  </table>
+  <div>
+      <dir-pagination-controls
+          max-size="5"
+          direction-links="true"
+          boundary-links="true" 
+          class="pull-right">
+        </dir-pagination-controls>
+  </div>
+  <div style="clear:both;"></div>
+  </div>
+</div>
+<viewdelete></viewdelete>

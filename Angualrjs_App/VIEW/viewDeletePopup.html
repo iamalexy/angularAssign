@@ -1,0 +1,31 @@
+<div ng-if="viewEachRecord === true || deleteEachRecord === true">
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">{{TitlePop}}</h4>
+      </div>
+      <div class="modal-body">
+        <div ng-if="viewEachRecord === true">
+          <p>Name : {{userDetail.name}}</p>
+          <p>Email : {{userDetail.email}}</p>
+          <p>Phone : {{userDetail.phone}}</p>
+          <p>Gender : {{userDetail.age}}</p>
+          <p>Age : {{userDetail.gender}}</p>
+          <p>Address : {{userDetail.address}}</p>
+        </div>
+        <div ng-if="deleteEachRecord === true">
+          <p>Do you want to delete?</p>
+        </div>
+
+      </div>
+      <div class="modal-footer">
+       <button type="button" ng-show="deleteEachRecord === true" class="btn btn-default" data-dismiss="modal" ng-click="delete(deleteId)">Delete</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+  <div>

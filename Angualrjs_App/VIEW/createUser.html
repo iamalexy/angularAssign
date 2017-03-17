@@ -1,0 +1,66 @@
+
+<topheader></topheader>
+<navigation></navigation>
+    <section class="container-fluid">
+        <div class="container login createUser">
+            <form class="form-horizontal col-md-8 col-md-offset-2 newUserForm" name="newUserForm" novalidate>
+              <div class="form-group">
+                <header class="col-sm-12 col-md-12">
+                  <p class="text-center form-control-static">Create User</p>
+                </header>
+              </div>
+              <div class="form-group col-sm-12 col-md-12">
+                    <label>*Name</label>
+                    <input required name="name" type="text" ng-model="newUser.name" class="input-group form-control" placeholder="Name" id="inputEmail" aria-describedby="inputEmail">
+                    <span style="color:red" ng-show="newUserForm.name.$dirty && newUserForm.name.$invalid">
+                        <span ng-show="newUserForm.name.$error.required">Please Enter Name</span>
+                    </span>
+              </div>
+               <div class="form-group col-sm-12 col-md-12">
+                    <label>*Email</label>
+                    <input required name="email" type="email" ng-model="newUser.email" class="form-control"  placeholder="Email" aria-describedby="inputpwd">
+                    <span style="color:red" ng-show="newUserForm.email.$dirty && newUserForm.email.$invalid">
+                        <p ng-show="newUserForm.email.$error.required">Please Enter Email ID</p>
+                        <p ng-show="newUserForm.email.$invalid">Please provide proper Email ID</p>
+                    </span>
+              </div> 
+              <div class="form-group col-sm-12 col-md-12">
+                    <label>*Phone</label>
+                    <input required name="phone" type="text" ng-model="newUser.phone" class="form-control" maxlength="10" placeholder="Phone" aria-describedby="inputpwd">
+                    <span style="color:red" ng-show="newUserForm.phone.$dirty && newUserForm.phone.$invalid">
+                        <span ng-show="newUserForm.phone.$error.required">Please Enter phone number</span>
+                    </span>
+              </div> 
+              <div class="form-group col-sm-12 col-md-12">
+                    <label>*Age</label>
+                    <input required name="age" type="number" ng-model="newUser.age" class="form-control"  placeholder="Age" aria-describedby="inputpwd">
+                    <span style="color:red" ng-show="newUserForm.age.$dirty && newUserForm.age.$invalid">
+                        <span ng-show="newUserForm.age.$error.required">Please Enter Age</span>
+                    </span>
+              </div> 
+              <div class="form-group col-sm-12 col-md-12">
+                    <label>*Gender</label>
+                    <input required name="gender" type="text" ng-model="newUser.gender" class="form-control"  placeholder="Gender" aria-describedby="inputpwd">
+                    <span style="color:red" ng-show="newUserForm.gender.$dirty && newUserForm.gender.$invalid">
+                        <span ng-show="newUserForm.gender.$error.required">Please Enter gender</span>
+                    </span>
+              </div> 
+              <div class="form-group col-sm-12 col-md-12">
+                    <label>*Address</label>
+                    <textarea rows="5" cols="50" required name="address" ng-model="newUser.address" class="form-control"  placeholder="Address" aria-describedby="inputpwd"></textarea>
+                    <span style="color:red" ng-show="newUserForm.address.$dirty && newUserForm.address.$invalid">
+                        <span ng-show="newUserForm.address.$error.required">Please Enter address</span>
+                    </span>
+              </div> 
+              <p class="col-sm-12 col-md-12 col-md-offset-2" style="color:red;" ng-show="error">{{error}}</p>
+             <div class="form-group">
+                <section class="submitBtn col-sm-12 col-md-12">
+                  <button type="submit" data-toggle="modal" data-target="#myModal" ng-click="createUser()" ng-disabled="newUserForm.$invalid" class="btn btn-success col-sm-3 col-md-3 col-md-offset-2"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> Create User</button>
+                  <button type="submit" ng-click="cancel()" class="btn btn-danger col-sm-3 col-md-3 col-md-offset-1"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Cancel</button>
+                </section>
+             </div>
+            </form>
+        </div>
+    </section>
+    
+</div>

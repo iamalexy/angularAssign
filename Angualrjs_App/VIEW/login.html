@@ -1,0 +1,75 @@
+<div ng-controller="loginCtrl">
+    <section class="container-fluid">
+        <div class="container login">
+              <header class="col-md-5 col-md-offset-4 loginHeader">
+                  <p class="text-center form-control-static">USER LOGIN</p>
+                </header>
+            <form class="form-horizontal col-md-5 col-md-offset-4" name="loginForm" id="login" novalidate>
+                
+              <div class="form-group">
+                <section class="has-feedback  col-sm-12 col-md-12">
+                  <input name="userEmail" required type="email" ng-model="userEmail" class="input-group form-control" placeholder="Enter email" id="inputEmail" aria-describedby="inputEmail">
+                  <span class="glyphicon glyphicon-user form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputEmail" class="sr-only">(Enter Email)</span>
+                  <span style="color:red" ng-show="loginForm.userEmail.$dirty && loginForm.userEmail.$invalid">
+                    <span ng-show="loginForm.userEmail.$error.required">Please Enter Email ID</span>
+                     <span ng-show="loginForm.userEmail.$invalid">Please provide Email ID</span>
+                  </span>
+                 </section>
+              </div>
+              <div class="form-group">
+                <section class="has-feedback  col-sm-12 col-md-12">
+                  <input name="userPwd" type="password" ng-model="userPwd" class="form-control" id="inputpwd" placeholder="password" aria-describedby="inputpwd" required>
+                  <span class="glyphicon glyphicon-lock form-control-feedback" aria-hidden="true"></span>
+                  <span id="inputpwd" class="sr-only">(Password)</span>
+                  <span style="color:red" ng-show="loginForm.userPwd.$dirty && loginForm.userPwd.$invalid">
+                    <span ng-show="loginForm.userPwd.$error.required">Please Enter Password</span>
+                  </span>
+                </section>
+             </div>
+             <div class="form-group">
+                <section class="submitBtn has-feedback col-sm-3 col-md-12">
+                  <button type="submit" ng-click="login()" class="btn btn-primary col-md-3">Log me in <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span></button>
+                  
+                  <span style="color:red" ng-show="failed" class="col-md-6">
+                    <span style="color:red" ng-show="failed">{{failed}}</span>
+                  </span>
+                </section>
+                
+             </div>
+            </form>
+            <footer class="container-fluid col-md-offset-4 col-md-5">
+               <aside>
+                   <ul class="col-md-12">
+                        <li><a href="#">PRICING</a></li>
+                        <li><a href="#">HELP</a></li>
+                        <li><a href="#">PRIVACY AND TERMS</a></li>
+                        <li><a href="#">ABOUT US</a></li>
+                        <li><a href="#">SUPPORT</a></li>
+                        <li><a href="#">COPYRIGHT</a></li>
+                    </ul>
+                </aside>
+                <aside>
+                    <section>
+                        <ul class="col-md-7">
+                            <li><a href="#">CONTACT: email</a></li>
+                            <li><a href="#">phone- 800 111 111</a></li>
+                            <li><a href="#">chat</a></li>
+                        </ul>
+                    </section>
+                    <section>
+                        <ul class="col-md-4 col-md-offset-1">
+                            <li>Follow us: 
+                                <button type="button" class="btn btn-default" aria-label="Left Align">
+                                    <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
+                                </button>
+                                <button type="button" class="btn btn-default" aria-label="Left Align">
+                                  <span class="glyphicon glyphicon-plane" aria-hidden="true"></span>
+                                </button>
+                            </li>
+                        </ul>
+                    </section>
+                </aside>
+            </footer>
+        </div>
+    </section>

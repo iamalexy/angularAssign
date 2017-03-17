@@ -1,0 +1,127 @@
+    #login {
+        background:#fff;
+    }
+    #login .form-group {
+        margin:10px 0;
+    }
+    .loginHeader {
+        background:#0C9199;
+        border-radius: 4px 4px 0 0;
+        color:#FFF;
+    }
+    div.login{
+       padding: 14% 0px 0px 0px;
+    }
+    div.login form{
+        border: 1px solid black;
+        box-shadow: 3px 3px 1px -2px rgba(0,0,0,0.75);
+    }
+    div.login form .form-group header{
+        background:#4AD2D2;
+        color:#fff;
+    }
+    div.login form .form-group span.glyphicon{
+        color:gray;
+    }
+    div.login form .form-group section.submitBtn span.glyphicon{
+        color:white;
+    }
+    div.login footer ul li{
+        display: inline-block;
+        font-size: 9px;
+    }
+     div.login footer ul li a{
+        color:black;
+        text-decoration: none;
+        letter-spacing: 0.55px;
+    }
+    div.login footer ul li:after{
+        content: "|";
+        padding:0px 10px 0px 10px;
+    }
+    div.login footer ul li:last-child:after{
+        content: "";
+        padding:0px;
+    }
+    div.login footer{
+        padding:0px;
+    }
+    div.login footer aside section ul li button.btn{
+        padding: 1px 5px;
+        background:gray;
+        margin-right: 7px;
+    }
+    div.login footer aside section ul li button span.glyphicon{
+        color:white;
+    }
+    body{
+        background: #EDF2EF;
+    }
+    form.newUserForm{
+        background:white;
+    }
+    .right-inner-addon {
+        position: relative;
+    }
+    .right-inner-addon input {
+        padding-right: 30px;    
+    }
+    .right-inner-addon i {
+        position: absolute;
+        right: 0px;
+        padding: 10px 12px;
+        pointer-events: none;
+    }
+    .createUser {
+        padding-top:5% !important;
+    }
+    .textCenter {
+        text-align:center;
+    }
+    .iconstyle {
+        color:#FFF;
+        font-size:16px;"
+    }
+     .textCenter p {
+        color:#FFF;
+     }
+     .gapforheader {
+        padding:20px 0 0 0;
+        background:#333;
+     }
+     .logotext {
+        font-size:50px;
+        color:#FFF !important;
+     }
+     .navbar {
+        margin-bottom:0px;
+        border-radius:0;
+     }
+     #myNavbar{
+        padding:10px;
+     }
+     #myNavbar button {
+        margin-left:10px;
+     }
+     #myNavbar .btn-color{
+        background:none;
+        color:#FFF;
+        border:none;
+     }
+     .createrow {
+        margin:20px 0;
+     }
+     .tableContainer {
+        border:1px solid #ccc;
+        box-shadow: 3px 3px 1px -2px rgba(0,0,0,0.75);
+        border-radius:5px;
+     }
+     .pagination {
+        margin:0;
+     }
+     ##login form {
+        border-top:none;
+     }
+     .has-feedback {
+        margin:10px 0;
+     }
